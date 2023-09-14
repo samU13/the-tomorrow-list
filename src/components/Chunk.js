@@ -17,7 +17,11 @@ export function Chunk({ task, category, onDeleteCategory, children }) {
     <div className="chunk">
       <div className="chunk__title" onClick={(e) => handleOpen()}>
         <h3 style={{ textTransform: "uppercase" }}>{category}</h3>
-        <span className={`chunk__completed ${allCompleted ? "" : "hidden"}`}>
+        <span
+          className={`chunk__completed ${
+            allCompleted && task.tareas.length > 0 ? "" : "hidden"
+          }`}
+        >
           COMPLETADO
         </span>
         <span> {categoryTotal}h</span>
